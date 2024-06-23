@@ -28,7 +28,7 @@ void mainloop(){
         tc::reset_color();
         std::cout << std::flush;
 
-        std::this_thread::sleep_for(16ms);
+        std::this_thread::sleep_for(16ms); //60fps
 
     }
 }
