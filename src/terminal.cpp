@@ -4,17 +4,17 @@
 #define CSI "\033["
 
 // cursor to (row,col)
-void tc::mov_to(int row, int col){
+void tc::mov_to(const int& row, const int& col){
     std::cout << CSI << row << ';' << col<< 'H';
 }
 
 //set foreground color
-void tc::set_fore_color(int id){
+void tc::set_fore_color(const int& id){
     std::cout<< CSI << "38;5;" << id << 'm';
 }
 
 //set background color
-void tc::set_back_color(int id){
+void tc::set_back_color(const int& id){
     std::cout << CSI << "48;5;" << id << 'm';
 }
 
