@@ -6,5 +6,7 @@ project(tetris)
 #cpp标准
 set(CXX_STANDARD 20)
 
-aux_source_directory(. src)
-add_executable(tetris ${src})
+aux_source_directory(src src_files)
+add_executable(tetris ${src_files})
+
+include_directories(include)
