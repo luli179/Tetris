@@ -2,8 +2,9 @@
 
 ## Require
 
-- g++
+- linux
 - CMake
+- g++
 
 ## Run
 
@@ -35,7 +36,7 @@
 4. Compile the project
 
    ```
-   make -j14
+   make -j12
    ```
 
    
@@ -46,7 +47,16 @@
    ./tetris
    ```
 
-   
+
+## OR
+
+use run.sh
+
+```
+./project directory/run.sh
+```
+
+
 
 ## Learn from
 
