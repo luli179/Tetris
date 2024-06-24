@@ -1,4 +1,5 @@
 #include "game.h"
+#include "tetromino.h"
 
 namespace gm{
 
@@ -6,10 +7,15 @@ namespace gm{
 
     int row, col;
 
+    Tetromino cur_te_set;
+    int index;
+
     void init(){
         running = true;
         row = 2;
         col = 15;
+        cur_te_set = J;
+        index = 0;
     }
 
     void quit(){
@@ -18,7 +24,7 @@ namespace gm{
     }
 
     void rotate(){
-        row--;
+        index = (index + 1) % 4;
     }
 
     void left(){

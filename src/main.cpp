@@ -32,12 +32,14 @@ void mainloop(){
         dw::window(19, 22, 8, 4, "Info");
         dw::window(1, 22, 8, 18, "Next");
 
-        tc::mov_to(10, 1);
+        tc::mov_to(10, 7);
         std::cout << "FPS:" << ut::fps();
 
         tc::mov_to(gm::row, ut::b2c(gm::col));
-        tc::set_back_color(15);
-        std::cout << "  ";
+        // tc::set_back_color(15);
+        // std::cout << "  ";
+
+        dw::tetromino(gm::cur_te_set, gm::row, gm::col, gm::index);
 
         tc::reset_color();
         std::cout << std::flush;

@@ -1,24 +1,25 @@
 #include "common.h"
 #include "utils.h"
+namespace ut{
+    int fps()
+    {
+        static auto start = std::chrono::steady_clock::now();
+        static auto end = start;
+        static int frame_count = 0;
+        static int fps = 0;
 
-int ut::fps()
-{
-    static auto start = std::chrono::steady_clock::now();
-    static auto end = start;
-    static int frame_count = 0;
-    static int fps = 0;
+        frame_count ++;
+        end = std::chrono::steady_clock::now();
+        if(end - start > 1s){
 
-    frame_count ++;
-    end = std::chrono::steady_clock::now();
-    if(end - start > 1s){
+            fps = frame_count;
+            frame_count = 0;
 
-        fps = frame_count;
-        frame_count = 0;
+            //start = std::chrono::steady_clock::now();
 
-        //start = std::chrono::steady_clock::now();
-
-        start = end;
-        
+            start = end;
+            
+        }
+        return fps;
     }
-    return fps;
 }

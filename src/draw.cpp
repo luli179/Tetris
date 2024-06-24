@@ -75,4 +75,23 @@ namespace dw{
         std::cout << title;
 
     }
+
+    void tetromino(const gm::Tetromino &t, const int &top, const int &left, const int &index){
+
+        tc::mov_to(top, ut::b2c(left));
+        tc::set_back_color(t[index][0].second);
+        std::cout << "  ";
+
+        //(dx,dy)
+        //row = row - dy
+        //col = col + dx
+        for(auto p : t[index]){
+            if(p.first > 'A')
+                continue;
+            tc::mov_to(top - p.second, ut::b2c(left + p.first));
+            std::cout << "  ";
+
+        }
+
+    }
 }

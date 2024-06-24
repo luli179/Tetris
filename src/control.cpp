@@ -29,7 +29,8 @@ namespace gm{
         while(running)
         {
             command = getch();
-            comm_func[command]();
+            if(comm_func.find(command) != comm_func.end())
+                comm_func[command]();
         }
     }
     void start_listen(){
