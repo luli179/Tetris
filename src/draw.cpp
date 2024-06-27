@@ -37,6 +37,19 @@ namespace dw{
     const std::string* cur_style = style4;
 
 
+
+
+    void logo(){
+
+        std::cout << "████████╗███████╗████████╗██████╗ ██╗░██████╗\n";
+        std::cout << "╚══██╔══╝██╔════╝╚══██╔══╝██╔══██╗██║██╔════╝\n";
+        std::cout << "   ██║   █████╗     ██║   ██████╔╝██║╚█████╗░\n";
+        std::cout << "   ██║   ██╔══╝     ██║   ██╔══██╗██║░╚═══██╗\n";
+        std::cout << "   ██║   ███████╗   ██║   ██║  ██║██║██████╔╝\n";
+        std::cout << "   ╚═╝   ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═════╝ \n";
+
+    }
+
     void firstline(const int& width){
         assert(width >= 2);
         std::cout << cur_style[0] << cur_style[3];
@@ -61,7 +74,9 @@ namespace dw{
             std::cout << cur_style[2];
         }
     }
-    void window(const int &top, const int &left, const int &width, const int &height, const std::string title){
+
+    void window(const int &top, const int &left, const int &width, const int &height, const std::string title)
+    {
 
         tc::mov_to(top, ut::b2c(left));
         firstline(width);
@@ -73,7 +88,6 @@ namespace dw{
 
         tc::mov_to(top, ut::b2c(left) + (width * 2 - title.length())/2);
         std::cout << title;
-
     }
 
     void tetromino(const gm::Tetromino &t, const int &top, const int &left, const int &index){

@@ -15,6 +15,12 @@ char command;
 void init(){
     
     tc::hide_cursor();
+
+    tc::clean_screen();
+    tc::reset_color();
+    dw::logo();
+    std::this_thread::sleep_for(2s); 
+
     gm::start_listen();
     gm::init();
 
